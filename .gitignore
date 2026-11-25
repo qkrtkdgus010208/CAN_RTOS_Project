@@ -1,55 +1,85 @@
-# Prerequisites
-*.d
+# ==========================================
+# 1. Jetson / Python 환경 관련
+# ==========================================
+# Python 가상환경
+venv/
+.venv/
+env/
+ENV/
 
-# Object files
+# Python 바이트코드 및 캐시
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 배포 및 패키징 산출물
+build/
+dist/
+*.egg-info/
+
+# 환경변수 및 로그 파일
+.env
+*.log
+
+# ==========================================
+# 2. STM32 / C / C++ 임베디드 빌드 산출물
+# ==========================================
+# 컴파일된 바이너리 및 오브젝트 파일
 *.o
-*.ko
 *.obj
+*.d
 *.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
+*.bin
 *.hex
-
-# Debug files
-*.dSYM/
+*.s19
+*.srec
+*.map
+*.list
+*.lst
 *.su
-*.idb
-*.pdb
+*.cyclo
+*.a
+*.so
+*.out
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# STM32CubeIDE / Eclipse 빌드 및 워크스페이스 캐시
+Debug/
+Release/
+*.launch
+.metadata/
+.settings/
+*.bak
 
-# debug information files
-*.dwo
+# Keil MDK / IAR EWARM 빌드 산출물 (사용 시 대비)
+Objects/
+Listings/
+*.uvguix.*
+*.uvoptx
+*.dep
+*.ewt
+*.ewd
+
+# CMake / Ninja 빌드 디렉토리
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# ==========================================
+# 3. 공통 에디터 및 OS 시스템 파일
+# ==========================================
+# VS Code 개인 설정
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Linux / Windows / macOS 임시 파일
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
